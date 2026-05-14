@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir Chamado - HelpTech</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>HelpTech</h1>
+                    <span>Suporte de TI</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Início</a></li>
+                        <li><a href="abrir-chamado.html" class="nav-link active">Abrir Chamado</a></li>
+                        <li><a href="consultar-chamado.html" class="nav-link">Consultar Chamado</a></li>
+                        <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Abrir Novo Chamado</h1>
+                <p class="page-subtitle">Preencha as informações abaixo para registrar seu problema</p>
+            </div>
+
+            <div class="form-container">
+                <form id="chamado-form" class="chamado-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Nome Completo *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input" required>
+                            <span class="error-message" id="fullName-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-mail *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="setor" class="form-label">Setor *</label>
+                            <select id="setor" name="setor" class="form-select" required>
+                                <option value="">Selecione seu setor</option>
+                                <option value="financeiro">Financeiro</option>
+                                <option value="rh">Recursos Humanos</option>
+                                <option value="ti">Tecnologia da Informação</option>
+                                <option value="administrativo">Administrativo</option>
+                                <option value="comercial">Comercial</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="operacional">Operacional</option>
+                                <option value="diretoria">Diretoria</option>
+                            </select>
+                            <span class="error-message" id="setor-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="problemaType" class="form-label">Tipo de Problema *</label>
+                            <select id="problemaType" name="problemaType" class="form-select" required>
+                                <option value="">Selecione o tipo</option>
+                                <option value="hardware">Hardware</option>
+                                <option value="software">Software</option>
+                                <option value="rede">Rede</option>
+                                <option value="email">E-mail</option>
+                                <option value="impressora">Impressora</option>
+                                <option value="sistema">Sistema Corporativo</option>
+                                <option value="seguranca">Segurança</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                            <span class="error-message" id="problemaType-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="atribuirPara" class="form-label">Direcionar para (Profissional Responsável)</label>
+                        <select id="atribuirPara" name="atribuirPara" class="form-select">
+                            <option value="">Não especificar</option>
+                            <option value="ana-paula">Ana Paula – Suporte Nível 1</option>
+                            <option value="alessandro-matheus">Alessandro Matheus – Infraestrutura e Redes</option>
+                            <option value="juliana-rocha">Juliana Rocha – Atendimento Geral</option>
+                            <option value="carlos-henrique">Carlos Henrique – Desenvolvimento de Sistemas</option>
+                            <option value="fernanda-lima">Fernanda Lima – Suporte a Sistemas Corporativos</option>
+                            <option value="ricardo-santos">Ricardo Santos – Segurança da Informação</option>
+                            <option value="patricia-oliveira">Patrícia Oliveira – Suporte Hardware</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description" class="form-label">Descrição do Problema *</label>
+                        <textarea id="description" name="description" class="form-textarea" rows="6" 
+                                  placeholder="Descreva detalhadamente o problema que você está enfrentando. Inclua informações como: quando o problema começou, mensagens de erro (se houver), passos realizados antes do problema ocorrer, etc." required></textarea>
+                        <span class="error-message" id="description-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="urgency" name="urgency" class="checkbox">
+                            <span class="checkmark"></span>
+                            Marcar como urgente
+                        </label>
+                        <small class="form-help">Marque apenas se o problema está impedindo totalmente suas atividades</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Enviar Chamado</button>
+                        <button type="reset" class="btn btn-secondary">Limpar Formulário</button>
+                    </div>
+                </form>
+
+                <div id="success-message" class="success-card" style="display: none;">
+                    <div class="success-icon">✅</div>
+                    <h3>Chamado Registrado com Sucesso!</h3>
+                    <p>Seu chamado foi registrado com o número: <strong id="chamado-number"></strong></p>
+                    <p>Você receberá uma confirmação por e-mail em breve.</p>
+                    <div class="success-actions">
+                        <a href="consultar-chamado.html" class="btn btn-primary">Consultar Status</a>
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">Abrir Novo Chamado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-content">
+                <div class="rodape-section">
+                    <div class="rodape-logo">
+                        <h3>HelpTech</h3>
+                        <p>Sua central de suporte técnico especializada</p>
+                    </div>
+                </div>
+                <div class="rodape-section">
+                    <h4>Links Rápidos</h4>
+                    <ul class="rodape-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="abrir-chamado.html">Abrir Chamado</a></li>
+                        <li><a href="consultar-chamado.html">Consultar Chamado</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="rodape-section">
+                    <h4>Suporte</h4>
+                    <div class="contato-info">
+                        <p>📧 suporte@helptech.com</p>
+                        <p>📞 (21) 3333-4444</p>
+                        <p>🕒 Seg-Sex: 8h às 18h</p>
+                    </div>
+                </div>
+                <div class="rodape-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rodape-bottom">
+               <p>&copy; 2025 HelpTech. Todos os direitos reservados.</p> <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

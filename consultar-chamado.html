@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Chamado - HelpTech</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>HelpTech</h1>
+                    <span>Suporte de TI</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Início</a></li>
+                        <li><a href="abrir-chamado.html" class="nav-link">Abrir Chamado</a></li>
+                        <li><a href="consultar-chamado.html" class="nav-link active">Consultar Chamado</a></li>
+                        <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Consultar Chamado</h1>
+                <p class="page-subtitle">Digite o número do protocolo ou seu e-mail para consultar o status</p>
+            </div>
+
+            <div class="search-container">
+                <form id="search-form" class="search-form">
+                    <div class="search-input-group">
+                        <input type="text" id="searchInput" class="search-input" 
+                               placeholder="Digite o número do protocolo ou e-mail">
+                        <button type="submit" class="btn btn-primary search-btn">Buscar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="carregar" class="carregar" style="display: none;">
+                <div class="carregar-spinner"></div>
+                <p>Buscando informações do chamado...</p>
+            </div>
+
+            <div id="sem-resultados" class="sem-resultados" style="display: none;">
+                <div class="sem-resultados-icon">🔍</div>
+                <h3>Nenhum chamado encontrado</h3>
+                <p>Verifique se o número do protocolo ou e-mail está correto e tente novamente.</p>
+            </div>
+
+            <div id="chamado-resultado" class="chamado-resultado" style="display: none;">
+                <div class="chamado-card">
+                    <div class="chamado-header">
+                        <div class="chamado-info">
+                            <h3 class="chamado-title">Chamado #<span id="chamado-id"></span></h3>
+                            <div class="chamado-status">
+                                <span id="status-badge" class="status-badge"></span>
+                            </div>
+                        </div>
+                        <div class="chamado-date">
+                            <small>Aberto em: <span id="chamado-date"></span></small>
+                        </div>
+                    </div>
+
+                    <div class="chamado-details">
+                        <div class="detail-row">
+                            <div class="detail-item">
+                                <label>Solicitante:</label>
+                                <span id="chamado-requester"></span>
+                            </div>
+                            <div class="detail-item">
+                                <label>E-mail:</label>
+                                <span id="chamado-email"></span>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-item">
+                                <label>Setor:</label>
+                                <span id="chamado-setor"></span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Tipo:</label>
+                                <span id="chamado-type"></span>
+                            </div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-item">
+                                <label>Responsável:</label>
+                                <span id="chamado-assignee"></span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Prioridade:</label>
+                                <span id="chamado-priority"></span>
+                            </div>
+                        </div>
+                        <div class="detail-full">
+                            <label>Descrição:</label>
+                            <p id="chamado-description"></p>
+                        </div>
+                    </div>
+
+                    <div class="chamado-timeline">
+                        <h4>Histórico do Chamado</h4>
+                        <div class="timeline" id="chamado-timeline">
+                        </div>
+                    </div>
+
+                    <div class="chamado-actions">
+                        <button class="btn btn-secondary" onclick="printChamado()">Imprimir</button>
+                        <a href="abrir-chamado.html" class="btn btn-primary">Abrir Novo Chamado</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="info-card">
+                    <h3>💡 Para Testar o Sistema</h3>
+                    <p>Use um dos números de protocolo ou e-mails abaixo:</p>
+                    <ul class="amostra-list">
+                        <li><strong>TK-2025-001</strong> - Chamado de hardware em atendimento</li>
+                        <li><strong>TK-2025-002</strong> - Problema de rede resolvido</li>
+                        <li><strong>joao.silva@empresa.com</strong> - Múltiplos chamados</li>
+                        <li><strong>maria.santos@empresa.com</strong> - Chamado urgente em andamento</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-content">
+                <div class="rodape-section">
+                    <div class="rodape-logo">
+                        <h3>HelpTech</h3>
+                        <p>Sua central de suporte técnico especializada</p>
+                    </div>
+                </div>
+                <div class="rodape-section">
+                    <h4>Links Rápidos</h4>
+                    <ul class="rodape-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="abrir-chamado.html">Abrir Chamado</a></li>
+                        <li><a href="consultar-chamado.html">Consultar Chamado</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="rodape-section">
+                    <h4>Suporte</h4>
+                    <div class="contato-info">
+                        <p>📧 suporte@helptech.com</p>
+                        <p>📞 (21) 3333-4444</p>
+                        <p>🕒 Seg-Sex: 8h às 18h</p>
+                    </div>
+                </div>
+                <div class="rodape-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rodape-bottom">
+                <p>&copy; 2025 HelpTech. Todos os direitos reservados.</p> <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

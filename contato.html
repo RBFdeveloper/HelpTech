@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - HelpTech</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>HelpTech</h1>
+                    <span>Suporte de TI</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Início</a></li>
+                        <li><a href="abrir-chamado.html" class="nav-link">Abrir Chamado</a></li>
+                        <li><a href="consultar-chamado.html" class="nav-link">Consultar Chamado</a></li>
+                        <li><a href="contato.html" class="nav-link active">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Entre em Contato</h1>
+                <p class="page-subtitle">Nossa equipe está pronta para ajudar você</p>
+            </div>
+
+            <div class="contato-grid">
+
+                <div class="contato-info-section">
+                    <div class="contato-card">
+                        <div class="contato-icon">📧</div>
+                        <h3>E-mail</h3>
+                        <p>suporte@helptech.com</p>
+                        <small>Resposta em até 4 horas</small>
+                    </div>
+
+                    <div class="contato-card">
+                        <div class="contato-icon">📞</div>
+                        <h3>Telefone</h3>
+                        <p>(21) 3333-4444</p>
+                        <small>Seg-Sex: 8h às 18h</small>
+                    </div>
+
+                    <div class="contato-card">
+                        <div class="contato-icon">📍</div>
+                        <h3>Endereço</h3>
+                        <p>Praça Pio X, s/n<br>
+                           Centro, Rio de Janeiro - RJ<br>
+                           CEP: 20040-020</p>
+                    </div>
+
+                    <div class="contato-card">
+                        <div class="contato-icon">💬</div>
+                        <h3>Chat Online</h3>
+                        <p>Disponível no site</p>
+                        <small>Seg-Sex: 8h às 18h</small>
+                    </div>
+                </div>
+
+                <div class="contato-form-section">
+                    <div class="form-container">
+                        <h2>Envie uma Mensagem</h2>
+                        <p>Tem alguma dúvida ou sugestão? Entre em contato conosco!</p>
+
+                        <form id="contato-form" class="contato-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contatoName" class="form-label">Nome *</label>
+                                    <input type="text" id="contatoName" name="contatoName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contatoEmail" class="form-label">E-mail *</label>
+                                    <input type="email" id="contatoEmail" name="contatoEmail" class="form-input" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contatoPhone" class="form-label">Telefone</label>
+                                    <input type="tel" id="contatoPhone" name="contatoPhone" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contatoSubject" class="form-label">Assunto *</label>
+                                    <select id="contatoSubject" name="contatoSubject" class="form-select" required>
+                                        <option value="">Selecione o assunto</option>
+                                        <option value="duvida">Dúvida Geral</option>
+                                        <option value="sugestao">Sugestão</option>
+                                        <option value="reclamacao">Reclamação</option>
+                                        <option value="elogio">Elogio</option>
+                                        <option value="parceria">Parceria</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contatoMessage" class="form-label">Mensagem *</label>
+                                <textarea id="contatoMessage" name="contatoMessage" class="form-textarea" rows="6" 
+                                          placeholder="Digite sua mensagem aqui..." required></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                                <button type="reset" class="btn btn-secondary">Limpar</button>
+                            </div>
+                        </form>
+
+                        <div id="contato-success" class="success-message" style="display: none;">
+                            <div class="success-icon">✅</div>
+                            <h3>Mensagem Enviada!</h3>
+                            <p>Obrigado pelo contato. Responderemos em breve!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="equipe-section">
+                <div class="section-header">
+                    <h2 class="section-title">Nossa Equipe</h2>
+                    <p class="section-subtitle">Conheça os profissionais que cuidam do seu suporte</p>
+                </div>
+
+                <div class="equipe-grid">
+                    <div class="equipe-card">
+                        <div class="equipe-avatar">👨‍💻</div>
+                        <h3>Carlos Henrique</h3>
+                        <p class="equipe-role">Coordenador de Suporte</p>
+                        <p class="equipe-description">Especialista em gestão de equipes e processos de TI</p>
+                    </div>
+
+                    <div class="equipe-card">
+                        <div class="equipe-avatar">👩‍💻</div>
+                        <h3>Ana Paula</h3>
+                        <p class="equipe-role">Analista Nível 1</p>
+                        <p class="equipe-description">Primeiro atendimento e suporte básico aos usuários</p>
+                    </div>
+
+                    <div class="equipe-card">
+                        <div class="equipe-avatar">👨‍🔧</div>
+                        <h3>Alessandro Matheus</h3>
+                        <p class="equipe-role">Especialista em Redes</p>
+                        <p class="equipe-description">Infraestrutura de rede e conectividade</p>
+                    </div>
+
+                    <div class="equipe-card">
+                        <div class="equipe-avatar">👩‍🔬</div>
+                        <h3>Fernanda Lima</h3>
+                        <p class="equipe-role">Sistemas Corporativos</p>
+                        <p class="equipe-description">Suporte especializado em ERP e sistemas internos</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <div class="section-header">
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                    <p class="section-subtitle">Tire suas dúvidas mais comuns</p>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Qual o horário de funcionamento do suporte?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Nosso suporte funciona de segunda a sexta-feira, das 8h às 18h. Para emergências, temos plantão 24h através do e-mail urgente@helptech.com</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Como acompanho o status do meu chamado?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Utilize a página "Consultar Chamado" inserindo o número do protocolo ou seu e-mail. Você também receberá atualizações por e-mail.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Quanto tempo leva para resolver um chamado?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>O tempo varia conforme a complexidade: problemas simples (2-4h), médios (1-2 dias), complexos (3-5 dias). Chamados urgentes têm prioridade.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Posso solicitar atendimento presencial?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim! Para problemas que necessitam atendimento no local, nossa equipe pode se deslocar. Isso é avaliado caso a caso durante o atendimento.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-content">
+                <div class="rodape-section">
+                    <div class="rodape-logo">
+                        <h3>HelpTech</h3>
+                        <p>Sua central de suporte técnico especializada</p>
+                    </div>
+                </div>
+                <div class="rodape-section">
+                    <h4>Links Rápidos</h4>
+                    <ul class="rodape-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="abrir-chamado.html">Abrir Chamado</a></li>
+                        <li><a href="consultar-chamado.html">Consultar Chamado</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="rodape-section">
+                    <h4>Suporte</h4>
+                    <div class="contato-info">
+                        <p>📧 suporte@helptech.com</p>
+                        <p>📞 (21) 3333-4444</p>
+                        <p>🕒 Seg-Sex: 8h às 18h</p>
+                    </div>
+                </div>
+                <div class="rodape-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rodape-bottom">
+                <p>&copy; 2025 HelpTech. Todos os direitos reservados.</p> <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
